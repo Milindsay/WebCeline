@@ -83,24 +83,21 @@
   </div>
 </div>
 <!-- Expériences Professionnelle -->
-<div id="works">
+<div id="works" onClick="resetAffichage()">
   <div class="container">
     <div class="section-title text-center center">
       <h2>Expériences professionnelle</h2>
       <hr>
     </div>
-    <div class="row">
-      <div id="areva" class="col-md-4">
-        <div id="arevaImg" onClick="myMove(this.id, 300)" class="block">
-          <img src="img/job/areva.png" class="img-responsive job-image">
-        </div>
-        <div id="arevaDescr"  class="job-description">
-          <h4>Stage de 2A d'ingénieur</h4>
-          <p> Marcoule</p>
-          <p> lkqhlkqd</p>
-          <p> sqldjqslkdqs</p>
+
+    <div id="rowDescr" class="row">
+      <!--gauche-->
+      <div class="col-md-4">
+        <div id="entreprise" class="block">
+          <img id="imageEntreprise" class="img-responsive job-image">
         </div>
       </div>
+      <!--droite -->
       <div class="col-md-8">
         <div id="fullDescr">
           <h4>Stage de 2A d'ingénieur</h4>
@@ -113,22 +110,36 @@
           <p> sqldjqslkdqs</p>
         </div>
       </div>
-      <div id="heredis" class="col-md-4">
-        <div id="heredisImg" class="block">
-          <img src="img/job/heredis.png" class="img-responsive job-image">
+    </div>
+    <div id="row2" class="row">
+      <div id="areva" class="col-md-4">
+        <div id="arevaImg" onClick="move(this.id, event)" class="block image">
+          <img src="img/job/arevaImg.png" class="img-responsive job-image">
         </div>
-        <div id="heredisDescr" class="job-description">
+        <div class="job-description description">
+          <h4>Stage de 2A d'ingénieur</h4>
+          <p> Marcoule</p>
+          <p> lkqhlkqd</p>
+          <p> sqldjqslkdqs</p>
+        </div>
+      </div>
+      <div id="heredis" class="col-md-4">
+        <div id="heredisImg" class="block image">
+          <img src="img/job/heredisImg.png" class="img-responsive job-image">
+        </div>
+        <div id="heredisDescr" class="job-description description">
           <h4>Stage de 3A d'ingénieur</h4>
           <p> Montpellier </p>
           <p> lkqhlkqd</p>
           <p> sqldjqslkdqs</p>
         </div>
-      </div>      
+      </div>  
+
       <div id="impika" class="col-md-4">
-        <div id="impikaImg" class="block">
-          <img src="img/job/impika.png" class="img-responsive job-image">
+        <div id="impikaImg" class="block image">
+          <img src="img/job/impikaImg.png" class="img-responsive job-image">
         </div>
-        <div id="impikaDescr" class="job-description">
+        <div id="impikaDescr" class="job-description description">
           <h4>1ère expérience professionnelle <br> (2 ans)</h4>
           <p> Aubagne</p>
           <p> lkqhlkqd</p>

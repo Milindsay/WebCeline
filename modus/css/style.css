@@ -213,7 +213,7 @@ hr {
 	background-color: #0f5cb3;
 }
 .section-title.center {
-	padding: 30px 0;
+	padding: 50px 0;
 	/*padding: 0px 0px 30px 0px;*/
 }
 .section-title h2, .section-title.center h2 {
@@ -288,7 +288,8 @@ hr {
 }
 /* Gallery Section */
 #works {
-	padding: 120px 0;
+	padding: 100px 0;
+	height: 100%;
 	background: #f6f6f6;
 }
 .categories {
@@ -606,22 +607,17 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 .block{
 	width: 300px;
 	/*border-bottom: 2px solid darkslategray;*/
-	box-shadow: 5px 5px 5px gray;
+	/*box-shadow: 5px 5px 5px gray;*/
+	/*border: 1px solid darkgray;*/
 }
 .job-image{
 	height: 150px;
 	padding: 15px;
-	/*Centrer l'image dans le div "block" ci-dessus*/
+	/*Centrer l'image dans le div "block" ci-dessous*/
 	margin: auto;
 }
 
-#arevaImg{
-	display: table-cell;
-	vertical-align: middle;
-}
-
 .job-description{
-	/*height: 300px;*/
 	width: 300px;
 	padding-top: 10px;
 	/*border: 1px solid darkgray;*/
@@ -631,5 +627,15 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 
 #fullDescr{
 	height: 300px;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
+
+#entreprise{
+	height: 300px;
+	/*display: table-cell;
+	vertical-align: middle;*/
+}
+
+/*#imageEntreprise{
+	border: 1px solid black;
+}*/
