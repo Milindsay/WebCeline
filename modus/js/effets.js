@@ -45,16 +45,18 @@ function myMove(elemId, nouvelleTaille)
 }
 
 
+//$("div").animate({height:'150'}); // Permet de redimensionner un élément (ex: div) avec une animation slideDown/Up
+
 //hidden en jquery //# -> id . -> class
 $(document).ready(function()
 {
-	$("#fullDescr").fadeOut();
+	$("#fullDescr").hide();
 	$("#arevaImg").click(function()
 		{
 			$("#arevaDescr").fadeOut();  //fideIn() pour faire apparaitre.
 			// $("#fullDescr").fadeIn(1000);
-			$("#fullDescr").slideToggle("slow", "swing"); //descend puis monte
-			//$("#fullDescr").slideDown("slow", "linear");  //descend juste
+			// $("#fullDescr").slideToggle("slow", "swing"); //descend puis monte
+			$("#fullDescr").slideDown("slow", "linear");  //descend juste
 			$("#heredis").fadeOut();
 			$("#impika").fadeOut();
 		}
