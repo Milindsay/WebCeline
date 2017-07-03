@@ -10,6 +10,7 @@ $(document).ready(function()
 	$("#entreprise").hide(); //Le div qui contient l'image de l'entreprise en grand est caché.
 	$("#fullDescr").hide();  //Le div qui contient la description complète de l'exp en entreprise est caché.
 	$("#rowDescr").hide();   //La row complète qui contient les deux div du dessus est cachée.
+	$(".invisible").hide();  //Les éléments qui contiennent la class 'invisible' sont masqués.
 });
 
 /* -------------------------------- JAVASCRIPT -------------------------------*/
@@ -76,6 +77,12 @@ function changeFullDescr(elemId)
 {
 	if(elemId == "heredisImg"){
 		$("h4.h4title").text("Stage de fin d'études"); //Changement du contenu de la balise <h4>
+		$("#fullDescr .contentDescription").text(
+			//document.getElementById("arevaDescr").innerText
+			$("#arevaDescr").text()
+		);
+		alert($("#arevaDescr").text());
+		// alert(document.getElementById("arevaDescr").innerText);
 	}
 	else if(elemId == "impikaImg"){
 		$("h4.h4title").text("1ère expérience professionnelle"); //Changement du contenu de la balise <h4>
