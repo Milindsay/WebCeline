@@ -1,84 +1,63 @@
-// function myMove(elemId, nouvelleTaille)
-// {
-// 	var elem = document.getElementById(elemId);   
-//     //alert("elem  :" + elem);
-//     //alert("elemelemIdelemId  :" + elemId);
-// 	var currentHeight = elem.offsetHeight;
-// 	var diff = nouvelleTaille - currentHeight;
-// 	//alert("nouvelleTaille : " + nouvelleTaille);
-// 	//alert("currentHeight : " + currentHeight);
-// 	//alert("diff : " + diff);
-// 	var diffAbs = Math.abs(diff);
-// 	//alert("diff abs: " + Math.abs(diff)); 
-// 	//if(Math.abs(diff) == -1){ aler("diff négatif"); } else {alert("diff positif");}
-	
-// 	var id = setInterval(move, 0);
-	
-// 	function move()
-// 	{	
-// 		if (diffAbs == 0 /*&& elem.height == nouvelleTaille*/) {
-// 			//alert("stop");
-// 			//elem.style.margin = nouvelleTaille + 'px';
-// 			clearInterval(id);
-// 		}
-// 		else
-// 		{
-// 			diffAbs--;
-// 			//alert("diffAbs : " + diffAbs);
-// 			if(Math.sign(diff) == -1)
-// 			{
-// 				//alert("diff négatif");
-// 				elem.height = currentHeight - 1;
-// 			}
-// 			else
-// 			{
-// 				//alert("diff positif");
-// 				elem.height = currentHeight + 1;
-// 			}
-// 			//alert("elem.height : " + elem.height);
-// 			elem.style.height = elem.height + 'px';
-// 			//alert("elem.style.height : " + elem.style.height);
-// 			currentHeight = elem.height;
-// 			//alert("currentHeight : " + currentHeight);
-// 		}
-// 	}
-// }
+/*Notes sur le jQuery : 
+	$(# -> id 
+	$(. -> class
+*/
 
-
-//hidden en jquery //# -> id . -> class
+/* --------------------------------- JQUERY --------------------------------*/
+/*Appeler au chargement du html.*/
 $(document).ready(function()
 {
-	$("#entreprise").hide();
-	$("#fullDescr").hide();
-	$("#rowDescr").hide();
+	$("#entreprise").hide(); //Le div qui contient l'image de l'entreprise en grand est caché.
+	$("#fullDescr").hide();  //Le div qui contient la description complète de l'exp en entreprise est caché.
+	$("#rowDescr").hide();   //La row complète qui contient les deux div du dessus est cachée.
 });
 
-function move(elemId, evenement)
-{
-	hideImagesAndDescr();
-
-	var imgSrc = 'img/job/'+ elemId +'.png';
- 	$("#imageEntreprise").attr("src", imgSrc);
-
-	$("#entreprise").fadeIn("slow", "linear");	
-	$("#fullDescr").fadeIn("slow", "linear");  //descend juste
-	$("#rowDescr").slideDown("slow", "linear");
-	evenement.stopPropagation();
-}
-
+/* -------------------------------- JAVASCRIPT -------------------------------*/
+/*  Fonction qui cache tous les éléments qui ont comme class 'image' et 'description'.
+	Ça correspond aux images et descriptions (en miniatures) qui sont dans la catégorie "expériences professionnelle." 
+	Param : aucun.
+	Retour : aucun.
+*/
 function hideImagesAndDescr()
 {
-	//Toutes les classe "image" et "description" vont disparaitre.
+	//Tous les éléments qui ont les class 'image' et 'description' vont disparaitre.
 	$(".image").fadeOut(300);
 	$(".description").fadeOut(300);
 }
 
+/*  Fonction appelée lorsque l'on clique sur une des images des expériences professionnelles. 
+	Param : 
+		- elemeId : id de l'élément sur lequel l'événement onClick a été mis.
+		- evenement : l'événement qui a appelé la fonction (ici : 'onClick').
+	Return : aucun:
+*/
+function move(elemId, evenement)
+{
+	hideImagesAndDescr(); //Appel de la fonction hideImagesAndDescr().
+
+	//Définition du nom de l'image que l'on va donner à la balise <img> contenue dans la rowDescr>entreprise>imageEntreprise cachée au démarrage.
+	var imgSrc = 'img/job/'+ elemId +'.png';
+ 	$("#imageEntreprise").attr("src", imgSrc);
+
+	$("#entreprise").fadeIn("slow", "linear");	//Apparition de l'élément 'entreprise' avec un effet fadeIn (apparition en jouant sur l'opacité de manière progressive).
+	$("#fullDescr").fadeIn("slow", "linear");  	//Apparition de l'élément 'fullDescr' avec un effet fadeIn (apparition en jouant sur l'opacité de manière progressive).
+	$("#rowDescr").slideDown("slow", "linear"); //Apparition de toute la 'rowDescr' avec un effet slideDown (effet en balayage de haut en bas).
+	
+	evenement.stopPropagation(); //Arrêt de l'événement 'onClick' qui se propage aux parents. Ici, on ne veut pas que l'événement 'onClick' du div des expériences professionnelles 'works' soit appelé.
+}
+
+/*	Fonction appelé lorsque l'on clique n'importe où dans le div des expériences professionnelles.
+	Cette fonction 'réinitialise' l'affichage du div. Fait disparaître la rowDescr et réapparaître les éléments qui ont les class 'image' et 'description'.
+	Param : aucun.
+	Retour : aucun.
+ */
 function resetAffichage()
 {
-	$("#entreprise").fadeOut();
-	$("#fullDescr").fadeOut(350, "linear");  
-	$("#rowDescr").slideUp("slow", "linear"); //descend juste
+	$("#entreprise").fadeOut(); //Disparition de l'élément 'entreprise' avec un effet fadeOut (disparition en jouant sur l'opacité de manière progressive).
+	$("#fullDescr").fadeOut(350, "linear"); //Disparition de l'élément 'fullDescr' avec un effet fadeOut (disparition en jouant sur l'opacité de manière progressive).
+	$("#rowDescr").slideUp("slow", "linear"); //Disparition de toute la 'rowDescr' avec un effet slideUp (effet en balayage de bas en haut).
 
+	//Tous les éléments qui ont les class 'image' et 'description' vont apparaître.
 	$(".image").show();
 	$(".description").show();
 }

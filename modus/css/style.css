@@ -591,6 +591,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	}
 }
 
+
+/******************** DEV AJOUTE **************************/
 /*Arrondir l'image pour faire croire à un cercle*/
 .arrondie {
 	width: 200px;
@@ -632,10 +634,4 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 
 #entreprise{
 	height: 300px;
-	/*display: table-cell;
-	vertical-align: middle;*/
 }
-
-/*#imageEntreprise{
-	border: 1px solid black;
-}*/
