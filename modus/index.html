@@ -10,10 +10,10 @@
   <title>WebSite Céline LEYRIT</title>
 
   <!-- Bootstrap CSS-->
-  <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
   <!-- Stylesheet  -->
-  <link rel="stylesheet" type="text/css"  href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
@@ -23,6 +23,15 @@
   <script type="text/javascript" src="js/modernizr.custom.js"></script>
   <script type="text/javascript" src="js/effets.js"></script>
 
+  <!--Timeline-->
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/timeline/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" type="text/css" href="css/timeline/style.css"> <!-- Resource style -->
+
+  <script type="text/javascript" src="js/timeline/modernizr.js"></script> <!-- Modernizr -->
+  <script type="text/javascript" src="js/timeline/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="js/timeline/jquery.mobile.custom.min.js"></script>
+  <script type="text/javascript" src="js/timeline/jtline.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 </head>
@@ -55,7 +64,7 @@
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"> <a href="#page-top"></a> </li>
         <li> <a class="page-scroll" href="#aboutMe">About</a> </li>
-        <li> <a class="page-scroll" href="#study">Etudes</a> </li>
+        <li> <a class="page-scroll" href="#studies">Etudes</a> </li>
         <li> <a class="page-scroll" href="#works">Expériences</a> </li>
         <li> <a class="page-scroll" href="#skills">Compétences</a> </li>
         <li> <a class="page-scroll" href="#contact">Contact</a> </li>
@@ -135,7 +144,7 @@
         <!-- Description complète de l'expérience. Caché par défaut. -->
         <div id="arevaDescr" class="invisible">
           <p>Sujet : Optimisation des espaces de stockage.</p>
-          <br>
+          <br><br>
           <p>Mission : Utiliser des outils existants pour mettre en place des quotas sur les serveurs afin d'éviter 
           une prolifération et duplications de fichiers inutiles.<br>
           Rédaction de documents et de powerpoint/diagrammes pour le DSI.</p>
@@ -151,11 +160,19 @@
           <img src="img/job/heredisImg.png" class="img-responsive job-image">
         </div>
         <!-- Description rapide de l'expérience -->
-        <div id="heredisDescr" class="job-description description">
+        <div class="job-description description">
           <h4>Stage de 3A d'ingénieur</h4>
           <p> Montpellier </p>
           <p> lkqhlkqd</p>
           <p> sqldjqslkdqs</p>
+        </div>
+        <!-- Description complète de l'expérience. Caché par défaut. -->
+        <div id="heredisDescr" class="invisible">
+          <p>Sujet : Librairie de généalogie.</p>
+          <br><br>
+          <p>Mission : Convertir du code Objective-C en C++.<br>
+          <br><p>Durée : 6 mois.</p>
+          <br><p>Lieu : BSD Concept, Montpellier.</p>
         </div>
       </div>  
 
@@ -166,16 +183,40 @@
           <img src="img/job/impikaImg.png" class="img-responsive job-image">
         </div>
         <!-- Description rapide de l'expérience -->
-        <div id="impikaDescr" class="job-description description">
+        <div class="job-description description">
           <h4>1ère expérience professionnelle <br> (2 ans)</h4>
           <p> Aubagne</p>
           <p> lkqhlkqd</p>
           <p> sqldjqslkdqs</p>
         </div>
+        <!-- Description complète de l'expérience. Caché par défaut. -->
+        <div id="impikaDescr" class="invisible">
+          <p>Sujet : Développement d'un module d'impression.</p>
+          <br><br>
+          <p>Mission : Création du code de la fluidique, de tests unitaires, d'ihm.<br>
+          <br><p>Durée : 2 ans.</p>
+          <br><p>Lieu : Impika, Aubagne.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Etudes -->
+<div id="studies" onClick="resetAffichage()">
+  <!-- Titre -->
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>Etudes</h2>
+      <hr>
+    </div>
+    <div id="myjtline">
+    </div>
+  </div>
+</div>
+
+
+
 <!-- Services Section -->
 <div id="services" class="text-center">
   <div class="container">
@@ -541,6 +582,9 @@
 <script type="text/javascript" src="js/jquery.parallax.js"></script> 
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
 <script type="text/javascript" src="js/contact_me.js"></script> 
+<!-- Timeliner -->
+<script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.timelinr-0.9.js"></script>
 
 <!-- Javascripts
     ================================================== --> 
