@@ -12,14 +12,14 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 20px; /*1.6rem*/
   font-family: "Fira Sans", sans-serif;
   color: #383838;
   background-color: #f8f8f8;
 }
 
 a {
-  color: #7b9d6f;
+  color: darkblue;
   text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ Main Components
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #7b9d6f;
+  background-color: darkblue;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
@@ -149,18 +149,18 @@ Main Components
   transition: background-color 0.3s, border-color 0.3s;
 }
 .no-touch .jtline .events a:hover::after {
-  background-color: #7b9d6f;
-  border-color: #7b9d6f;
+  background-color: darkblue;
+  border-color: darkblue;
 }
 .jtline .events a.selected {
   pointer-events: none;
 }
 .jtline .events a.selected::after {
-  background-color: #7b9d6f;
-  border-color: #7b9d6f;
+  background-color: darkblue;
+  border-color: darkblue;
 }
 .jtline .events a.older-event::after {
-  border-color: #7b9d6f;
+  border-color: darkblue;
 }
 @media only screen and (min-width: 1100px) {
   .jtline {
@@ -211,7 +211,7 @@ Main Components
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: url(../img/cd-arrow.svg) no-repeat 0 0;
+  background: url(../../img/cd-arrow.svg) no-repeat 0 0;
 }
 .cd-timeline-navigation a.prev {
   left: 0;
@@ -225,7 +225,7 @@ Main Components
   right: 0;
 }
 .no-touch .cd-timeline-navigation a:hover {
-  border-color: #7b9d6f;
+  border-color: darkblue;
 }
 .cd-timeline-navigation a.inactive {
   cursor: not-allowed;
@@ -298,7 +298,7 @@ Main Components
 }
 .jtline .events-content h2 {
   font-weight: bold;
-  font-size: 2.6rem;
+  font-size: 10px;/*2.6rem;*/
   font-family: "Playfair Display", serif;
   font-weight: 700;
   line-height: 1.2;
@@ -313,7 +313,7 @@ Main Components
   content: '- ';
 }
 .jtline .events-content p {
-  font-size: 1.4rem;
+  font-size: 9px;/*1.4rem;*/
   color: #959595;
 }
 .jtline .events-content em, .jtline .events-content p {
@@ -321,13 +321,13 @@ Main Components
 }
 @media only screen and (min-width: 768px) {
   .jtline .events-content h2 {
-    font-size: 7rem;
+    font-size: 40px;/*7rem*/;
   }
   .jtline .events-content em {
-    font-size: 2rem;
+    font-size: 20px;/*2rem;*/
   }
   .jtline .events-content p {
-    font-size: 1.8rem;
+    font-size: 18px;/*1.8rem;*/
   }
 }
 

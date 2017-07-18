@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/timeline/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/timeline/style.css"> <!-- Resource style -->
+    <script src="js/timeline/modernizr.js"></script> <!-- Modernizr -->
+
+    <script src="js/timeline/jquery-2.1.4.js"></script>
+    <script src="js/timeline/jquery.mobile.custom.min.js"></script>
+    <script src="js/timeline/jtline.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // var contentText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+
+            // dataRoot : '/'
+            var myMappedObject = [
+                  {
+                      "isSelected": "true",
+                      "taskTitle": "BAC Série S",
+                      "taskSubTitle": "Option SVT",
+                      "assignDate": "06/2009",
+                      "taskShortDate": "2009",
+                      "taskDetails": "Lycée Gustave Jaume, Pierrelatte (26)"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "BTS I.R.I.S",
+                      "taskSubTitle": "Informatique et Réseau pour l'Industrie et les Services technique (Bac +2)",
+                      "assignDate": "06/2011",
+                      "taskShortDate": "2011",
+                      "taskDetails": "Lycée Jean Mermoz, Montpellier (34)"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "Chef de projet en Informatique et Robotique",
+                      "taskSubTitle": "Institut Méditerranéen d'Etude et de Recherches en Informatique et Robotique (Bac+5)",
+                      "assignDate": "10/2014",
+                      "taskShortDate": "2014",
+                      "taskDetails": "IMERIR, Perpignan (66)"
+                  }
+            ];
+
+            var jtLine = $('.myjtline').jTLine({
+                callType: 'jsonObject',
+                structureObj: myMappedObject,
+                map: {
+                    "dataRoot": "/",
+                    "title": "taskTitle",
+                    "subTitle": "taskSubTitle",
+                    "dateValue": "assignDate",
+                    "pointCnt": "taskShortDate",
+                    "bodyCnt": "taskDetails"
+                },
+                distanceMode: 'fixDistance', // 'fixDistance' 'auto' 'predefinedDistance'
+                eventsMinDistance: 120,       // Consider It as Distance Unit "by Pixel"
+                fixDistanceValue: 2,         // if eventsMinDistance = 60 & fixDistanceValue= 2 then the value is: (60*2) = 120 px
+                firstPointMargin: 1          // First Point Margin from the left
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="myjtline">
+    </div>
+</body>
+</html>
