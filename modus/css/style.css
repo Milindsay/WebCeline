@@ -592,7 +592,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	}
 }
 
-
+/**********************************************************/
+/**********************************************************/
 /******************** DEV AJOUTE **************************/
 
 /*Block de description pour les expériences pro*/
@@ -652,8 +653,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 
 
 /*Timeline*/
-#studies{
+/* #studies{
 	height: 100%;
 	padding: 100px 0;
 	background: #ededed;
-}
+} */
